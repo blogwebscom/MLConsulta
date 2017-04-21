@@ -1,13 +1,14 @@
 object Form1: TForm1
-  Left = 538
-  Height = 521
-  Top = 295
+  Left = 528
+  Height = 520
+  Top = 226
   Width = 570
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'REST y JSON by daragor'
-  ClientHeight = 521
+  ClientHeight = 520
   ClientWidth = 570
-  Color = 13619151
+  Color = 51430
+  OnCreate = FormCreate
   LCLVersion = '1.6.4.0'
   object Button1: TButton
     Left = 475
