@@ -1,0 +1,278 @@
+object Form1: TForm1
+  Left = 538
+  Height = 521
+  Top = 295
+  Width = 570
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'REST y JSON by daragor'
+  ClientHeight = 521
+  ClientWidth = 570
+  Color = 13619151
+  LCLVersion = '1.6.4.0'
+  object Button1: TButton
+    Left = 475
+    Height = 28
+    Top = 70
+    Width = 80
+    Caption = 'GET'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object cjson: TMemo
+    Left = 16
+    Height = 70
+    Top = 123
+    Width = 539
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 475
+    Height = 28
+    Top = 200
+    Width = 80
+    Caption = 'PARSE'
+    OnClick = Button2Click
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 16
+    Top = 104
+    Width = 219
+    Caption = 'Cadena JSON desde mercadolibre:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object jnom: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 72
+    Width = 448
+    EditLabel.AnchorSideLeft.Control = jnom
+    EditLabel.AnchorSideRight.Control = jnom
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = jnom
+    EditLabel.Left = 16
+    EditLabel.Height = 15
+    EditLabel.Top = 56
+    EditLabel.Width = 448
+    EditLabel.Caption = 'Que desea Buscar?='
+    EditLabel.ParentColor = False
+    LabelSpacing = 1
+    TabOrder = 1
+    Text = 'smarttv samsung'
+  end
+  object Label2: TLabel
+    Left = 192
+    Height = 16
+    Top = 232
+    Width = 182
+    Caption = 'Total Resultados Obtenidos:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object jtotal: TLabel
+    Left = 384
+    Height = 16
+    Top = 232
+    Width = 8
+    Caption = '0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object jquery: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 24
+    Width = 448
+    EditLabel.AnchorSideLeft.Control = jquery
+    EditLabel.AnchorSideRight.Control = jquery
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = jquery
+    EditLabel.Left = 16
+    EditLabel.Height = 15
+    EditLabel.Top = 8
+    EditLabel.Width = 448
+    EditLabel.Caption = 'API query:'
+    EditLabel.ParentColor = False
+    LabelSpacing = 1
+    TabOrder = 0
+    Text = 'https://api.mercadolibre.com/sites/MLA/search?q='
+  end
+  object cjsonf: TMemo
+    Left = 16
+    Height = 70
+    Top = 252
+    Width = 539
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 5
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 16
+    Top = 232
+    Width = 168
+    Caption = 'Cadena JSON formateada:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object jpp: TLabeledEdit
+    Left = 224
+    Height = 27
+    Top = 472
+    Width = 96
+    Alignment = taRightJustify
+    EditLabel.AnchorSideLeft.Control = jpp
+    EditLabel.AnchorSideRight.Control = jpp
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = jpp
+    EditLabel.Left = 224
+    EditLabel.Height = 15
+    EditLabel.Top = 454
+    EditLabel.Width = 96
+    EditLabel.Caption = '$ Promedio:'
+    EditLabel.ParentColor = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 7
+    Text = '0'
+  end
+  object jres: TMemo
+    Left = 16
+    Height = 96
+    Top = 352
+    Width = 539
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 6
+  end
+  object Label4: TLabel
+    Left = 16
+    Height = 16
+    Top = 332
+    Width = 249
+    Caption = '5 primeros resultados de la búsqueda:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button3: TButton
+    Left = 475
+    Height = 30
+    Top = 470
+    Width = 80
+    Caption = 'NUEVA'
+    OnClick = Button3Click
+    TabOrder = 8
+  end
+  object Label5: TLabel
+    Left = 16
+    Height = 15
+    Top = 200
+    Width = 155
+    Caption = 'https://indy.fulgan.com/SSL/'
+    ParentColor = False
+  end
+  object jpma: TLabeledEdit
+    Left = 16
+    Height = 27
+    Top = 472
+    Width = 96
+    Alignment = taRightJustify
+    EditLabel.AnchorSideLeft.Control = jpma
+    EditLabel.AnchorSideRight.Control = jpma
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = jpma
+    EditLabel.Left = 16
+    EditLabel.Height = 15
+    EditLabel.Top = 454
+    EditLabel.Width = 96
+    EditLabel.Caption = '$ Mayor:'
+    EditLabel.ParentColor = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 9
+    Text = '0'
+  end
+  object jpme: TLabeledEdit
+    Left = 120
+    Height = 27
+    Top = 472
+    Width = 96
+    Alignment = taRightJustify
+    EditLabel.AnchorSideLeft.Control = jpme
+    EditLabel.AnchorSideRight.Control = jpme
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = jpme
+    EditLabel.Left = 120
+    EditLabel.Height = 15
+    EditLabel.Top = 454
+    EditLabel.Width = 96
+    EditLabel.Caption = '$ Menor:'
+    EditLabel.ParentColor = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 10
+    Text = '0'
+  end
+end
