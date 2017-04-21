@@ -1,4 +1,4 @@
-object Form1: TForm1
+object F_MLC: TF_MLC
   Left = 528
   Height = 520
   Top = 226
@@ -8,15 +8,15 @@ object Form1: TForm1
   ClientHeight = 520
   ClientWidth = 570
   Color = 51430
-  OnCreate = FormCreate
+  OnActivate = FormActivate
   LCLVersion = '1.6.4.0'
-  object Button1: TButton
+  object b_get: TButton
     Left = 475
-    Height = 28
+    Height = 30
     Top = 70
     Width = 80
     Caption = 'GET'
-    OnClick = Button1Click
+    OnClick = b_getClick
     TabOrder = 2
   end
   object cjson: TMemo
@@ -28,13 +28,14 @@ object Form1: TForm1
     ScrollBars = ssAutoVertical
     TabOrder = 3
   end
-  object Button2: TButton
+  object b_parse: TButton
     Left = 475
-    Height = 28
-    Top = 200
+    Height = 30
+    Top = 206
     Width = 80
     Caption = 'PARSE'
-    OnClick = Button2Click
+    Enabled = False
+    OnClick = b_parseClick
     TabOrder = 4
   end
   object Label1: TLabel
@@ -63,11 +64,11 @@ object Form1: TForm1
     EditLabel.AnchorSideBottom.Control = jnom
     EditLabel.Left = 16
     EditLabel.Height = 15
-    EditLabel.Top = 56
+    EditLabel.Top = 55
     EditLabel.Width = 448
-    EditLabel.Caption = 'Que desea Buscar?='
+    EditLabel.Caption = 'Que desea Buscar?'
     EditLabel.ParentColor = False
-    LabelSpacing = 1
+    LabelSpacing = 2
     TabOrder = 1
     Text = 'smarttv samsung'
   end
@@ -112,12 +113,13 @@ object Form1: TForm1
     EditLabel.AnchorSideBottom.Control = jquery
     EditLabel.Left = 16
     EditLabel.Height = 15
-    EditLabel.Top = 8
+    EditLabel.Top = 7
     EditLabel.Width = 448
     EditLabel.Caption = 'API query:'
     EditLabel.ParentColor = False
-    LabelSpacing = 1
+    LabelSpacing = 2
     TabOrder = 0
+    TabStop = False
     Text = 'https://api.mercadolibre.com/sites/MLA/search?q='
   end
   object cjsonf: TMemo
@@ -156,9 +158,9 @@ object Form1: TForm1
     EditLabel.AnchorSideBottom.Control = jpp
     EditLabel.Left = 224
     EditLabel.Height = 15
-    EditLabel.Top = 454
+    EditLabel.Top = 456
     EditLabel.Width = 96
-    EditLabel.Caption = '$ Promedio:'
+    EditLabel.Caption = 'Promedio $'
     EditLabel.ParentColor = False
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlue
@@ -167,9 +169,10 @@ object Form1: TForm1
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
+    LabelSpacing = 1
     ParentFont = False
     ReadOnly = True
-    TabOrder = 7
+    TabOrder = 9
     Text = '0'
   end
   object jres: TMemo
@@ -203,14 +206,14 @@ object Form1: TForm1
     ParentColor = False
     ParentFont = False
   end
-  object Button3: TButton
+  object b_new: TButton
     Left = 475
     Height = 30
     Top = 470
     Width = 80
     Caption = 'NUEVA'
-    OnClick = Button3Click
-    TabOrder = 8
+    OnClick = b_newClick
+    TabOrder = 10
   end
   object Label5: TLabel
     Left = 16
@@ -232,9 +235,9 @@ object Form1: TForm1
     EditLabel.AnchorSideBottom.Control = jpma
     EditLabel.Left = 16
     EditLabel.Height = 15
-    EditLabel.Top = 454
+    EditLabel.Top = 456
     EditLabel.Width = 96
-    EditLabel.Caption = '$ Mayor:'
+    EditLabel.Caption = 'Precio Mayor $'
     EditLabel.ParentColor = False
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlue
@@ -243,9 +246,10 @@ object Form1: TForm1
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
+    LabelSpacing = 1
     ParentFont = False
     ReadOnly = True
-    TabOrder = 9
+    TabOrder = 7
     Text = '0'
   end
   object jpme: TLabeledEdit
@@ -260,9 +264,9 @@ object Form1: TForm1
     EditLabel.AnchorSideBottom.Control = jpme
     EditLabel.Left = 120
     EditLabel.Height = 15
-    EditLabel.Top = 454
+    EditLabel.Top = 456
     EditLabel.Width = 96
-    EditLabel.Caption = '$ Menor:'
+    EditLabel.Caption = 'Precio Menor $'
     EditLabel.ParentColor = False
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlue
@@ -271,9 +275,16 @@ object Form1: TForm1
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
+    LabelSpacing = 1
     ParentFont = False
     ReadOnly = True
-    TabOrder = 10
+    TabOrder = 8
     Text = '0'
+  end
+  object Shape1: TShape
+    Left = 16
+    Height = 1
+    Top = 224
+    Width = 456
   end
 end

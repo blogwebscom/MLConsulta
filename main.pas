@@ -10,12 +10,12 @@ uses
 
 type
 
-  { TForm1 }
+  { TF_MLC }
 
-  TForm1 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
+  TF_MLC = class(TForm)
+    b_get: TButton;
+    b_parse: TButton;
+    b_new: TButton;
     cjsonf: TMemo;
     jpma: TLabeledEdit;
     jpme: TLabeledEdit;
@@ -30,50 +30,58 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    Shape1: TShape;
+    procedure b_getClick(Sender: TObject);
+    procedure b_parseClick(Sender: TObject);
+    procedure b_newClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { private declarations }
+    procedure ML_API();
   public
     { public declarations }
   end;
 
 var
-  Form1: TForm1;
-  cli: TFPHTTPClient;
+  F_MLC: TF_MLC;
 
 implementation
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TF_MLC }
 
-procedure ProcessContent;
+procedure TF_MLC.FormActivate(Sender: TObject);
+begin
+  jnom.SetFocus;
+end;
+
+procedure TF_MLC.ML_API();
 var
   qapi,nprod: string;
 begin
   with TFPHTTPClient.Create(nil) do
   try
-    qapi:= trim(Form1.jquery.Text);
-    nprod:= stringreplace(trim(Form1.jnom.Text),' ','%20',[rfReplaceAll]);
-    Form1.jnom.Text:= nprod;
-    Form1.cjson.Text:= Get(qapi+nprod+'#json');
+    qapi:= trim(jquery.Text);
+    nprod:= stringreplace(trim(jnom.Text),' ','%20',[rfReplaceAll]);
+    jnom.Text:= nprod;
+    cjson.Text:= Get(qapi+nprod+'#json');
   finally
+    b_get.Enabled:= false;
+    b_parse.Enabled:= true;
     Free;
   end;
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TF_MLC.b_getClick(Sender: TObject);
 begin
   if jnom.Text <> '' then
-    BeginThread(TThreadFunc(@ProcessContent))
+    ML_API()
   else
     showmessage('Indique las palabras clave para usar el API query');
 end;
 
-procedure TForm1.Button2Click(Sender: TObject);
+procedure TF_MLC.b_parseClick(Sender: TObject);
 var
   JC: TJSONData;
   max, min, pprom: real;
@@ -106,7 +114,7 @@ begin
       jpme.Text:= formatfloat('0.00',min);
       pprom:= (pprom/5);
       jpp.Text:= formatfloat('0.00',pprom);
-      Button3.SetFocus;
+      b_new.SetFocus;
     except
         on E:Exception do begin
           ShowMessage('Error: '+E.Message);
@@ -115,7 +123,7 @@ begin
   end;
 end;
 
-procedure TForm1.Button3Click(Sender: TObject);
+procedure TF_MLC.b_newClick(Sender: TObject);
 begin
   cjson.Clear;
   cjsonf.Clear;
@@ -124,12 +132,9 @@ begin
   jpma.Text:= '0';
   jpme.Text:= '0';
   jpp.Text:= '0';
+  b_get.Enabled:= true;
+  b_parse.Enabled:= false;
   jnom.SetFocus;
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-
 end;
 
 end.

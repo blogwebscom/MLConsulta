@@ -16,7 +16,7 @@ begin
   Application.Title:='restapi (JSON) by daragor';
   RequireDerivedFormResource:=True;
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TF_MLC, F_MLC);
   Application.Run;
 end.
 
