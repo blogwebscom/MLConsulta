@@ -60,16 +60,19 @@ procedure TF_MLC.ML_API();
 var
   qapi,nprod: string;
 begin
-  with TFPHTTPClient.Create(nil) do
-  try
-    qapi:= trim(jquery.Text);
-    nprod:= stringreplace(trim(jnom.Text),' ','%20',[rfReplaceAll]);
+  qapi:= trim(jquery.Text);
+  nprod:= stringreplace(trim(jnom.Text),' ','%20',[rfReplaceAll]);
+  if (qapi <> '') and (nprod <> '') then {Control vacios}
+  begin
     jnom.Text:= nprod;
-    cjson.Text:= Get(qapi+nprod+'#json');
-  finally
-    b_get.Enabled:= false;
-    b_parse.Enabled:= true;
-    Free;
+    with TFPHTTPClient.Create(nil) do
+    try
+      cjson.Text:= Get(qapi+nprod+'#json');
+    finally
+      Free;
+      b_get.Enabled:= false;
+      b_parse.Enabled:= true;
+    end;
   end;
 end;
 
@@ -117,7 +120,7 @@ begin
       b_new.SetFocus;
     except
         on E:Exception do begin
-          ShowMessage('Error: '+E.Message);
+          ShowMessage('Ha ocurrido un Error!'+#13+E.Message);
         end;
     end;
   end;

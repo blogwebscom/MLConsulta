@@ -7,7 +7,7 @@ object F_MLC: TF_MLC
   Caption = 'REST y JSON by daragor'
   ClientHeight = 520
   ClientWidth = 570
-  Color = 51430
+  Color = 48857
   OnActivate = FormActivate
   LCLVersion = '1.6.4.0'
   object b_get: TButton
@@ -63,12 +63,18 @@ object F_MLC: TF_MLC
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = jnom
     EditLabel.Left = 16
-    EditLabel.Height = 15
-    EditLabel.Top = 55
+    EditLabel.Height = 13
+    EditLabel.Top = 56
     EditLabel.Width = 448
     EditLabel.Caption = 'Que desea Buscar?'
     EditLabel.ParentColor = False
-    LabelSpacing = 2
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Height = -11
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
     TabOrder = 1
     Text = 'smarttv samsung'
   end
@@ -112,12 +118,18 @@ object F_MLC: TF_MLC
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = jquery
     EditLabel.Left = 16
-    EditLabel.Height = 15
-    EditLabel.Top = 7
+    EditLabel.Height = 13
+    EditLabel.Top = 8
     EditLabel.Width = 448
     EditLabel.Caption = 'API query:'
     EditLabel.ParentColor = False
-    LabelSpacing = 2
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Height = -11
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
     TabOrder = 0
     TabStop = False
     Text = 'https://api.mercadolibre.com/sites/MLA/search?q='
@@ -157,11 +169,18 @@ object F_MLC: TF_MLC
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = jpp
     EditLabel.Left = 224
-    EditLabel.Height = 15
-    EditLabel.Top = 456
+    EditLabel.Height = 13
+    EditLabel.Top = 457
     EditLabel.Width = 96
     EditLabel.Caption = 'Promedio $'
     EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Height = -11
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlue
     Font.Height = -16
@@ -169,7 +188,7 @@ object F_MLC: TF_MLC
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
-    LabelSpacing = 1
+    LabelSpacing = 2
     ParentFont = False
     ReadOnly = True
     TabOrder = 9
@@ -234,11 +253,18 @@ object F_MLC: TF_MLC
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = jpma
     EditLabel.Left = 16
-    EditLabel.Height = 15
-    EditLabel.Top = 456
+    EditLabel.Height = 13
+    EditLabel.Top = 457
     EditLabel.Width = 96
     EditLabel.Caption = 'Precio Mayor $'
     EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Height = -11
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlue
     Font.Height = -16
@@ -246,7 +272,7 @@ object F_MLC: TF_MLC
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
-    LabelSpacing = 1
+    LabelSpacing = 2
     ParentFont = False
     ReadOnly = True
     TabOrder = 7
@@ -263,11 +289,18 @@ object F_MLC: TF_MLC
     EditLabel.AnchorSideRight.Side = asrBottom
     EditLabel.AnchorSideBottom.Control = jpme
     EditLabel.Left = 120
-    EditLabel.Height = 15
-    EditLabel.Top = 456
+    EditLabel.Height = 13
+    EditLabel.Top = 457
     EditLabel.Width = 96
     EditLabel.Caption = 'Precio Menor $'
     EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Height = -11
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlue
     Font.Height = -16
@@ -275,7 +308,7 @@ object F_MLC: TF_MLC
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     Font.Style = [fsBold]
-    LabelSpacing = 1
+    LabelSpacing = 2
     ParentFont = False
     ReadOnly = True
     TabOrder = 8
@@ -285,6 +318,6 @@ object F_MLC: TF_MLC
     Left = 16
     Height = 1
     Top = 224
-    Width = 456
+    Width = 448
   end
 end
