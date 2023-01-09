@@ -1,0 +1,272 @@
+object F_MLC: TF_MLC
+  Left = 428
+  Height = 490
+  Top = 212
+  Width = 570
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Consulta en mercadolibre by daragor'
+  ClientHeight = 490
+  ClientWidth = 570
+  Color = 5894655
+  LCLVersion = '2.2.4.0'
+  object cjson: TMemo
+    Left = 16
+    Height = 26
+    Top = 440
+    Width = 182
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 5
+    Visible = False
+  end
+  object pclave: TLabeledEdit
+    Left = 16
+    Height = 26
+    Hint = 'Ingrese la/s palabra/s claves para buscar el producto'
+    Top = 74
+    Width = 448
+    EditLabel.Height = 17
+    EditLabel.Width = 448
+    EditLabel.Caption = 'Ingrese las palabras clave de lo que desea buscar?'
+    EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Height = -13
+    EditLabel.Font.Name = 'Segoe UI Semibold'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 17
+    Top = 110
+    Width = 169
+    Caption = 'Total Resultados Obtenidos:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object jtotal: TLabel
+    Left = 191
+    Height = 17
+    Top = 110
+    Width = 7
+    Caption = '0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object jquery: TLabeledEdit
+    Left = 16
+    Height = 23
+    Hint = 'NO cambiar este código a menos que sepa lo que hace.'
+    Top = 24
+    Width = 448
+    EditLabel.Height = 13
+    EditLabel.Width = 448
+    EditLabel.Caption = 'API query:'
+    EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Height = -11
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
+    Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+    TabStop = False
+    Text = 'https://api.mercadolibre.com/sites/MLA/search?q='
+  end
+  object jres: TMemo
+    Left = 16
+    Height = 272
+    Top = 136
+    Width = 538
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 4
+  end
+  object Shape1: TShape
+    Left = 16
+    Height = 1
+    Top = 128
+    Width = 539
+  end
+  object Shape2: TShape
+    Left = 16
+    Height = 1
+    Top = 52
+    Width = 539
+  end
+  object can: TJLabeledIntegerEdit
+    Left = 474
+    Height = 23
+    Hint = 'Cantidad de resultados para las operaciones.'
+    Top = 24
+    Width = 80
+    DisplayFormat = '0'
+    Value = 10
+    NegativeColor = clDefault
+    Alignment = taRightJustify
+    EditLabel.Height = 13
+    EditLabel.Width = 80
+    EditLabel.Caption = 'Cant.  Max.255'
+    EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Height = -11
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    MaxLength = 3
+    TabOrder = 1
+    TabStop = False
+    OnClick = canClick
+    OnEditingDone = canEditingDone
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 424
+    Width = 199
+    Caption = 'Cadena Json no visible para el usuario'
+    ParentColor = False
+    Visible = False
+  end
+  object pma: TJLabeledFloatEdit
+    Left = 210
+    Height = 26
+    Top = 440
+    Width = 115
+    DisplayFormat = '#,0.00'
+    Decimals = 2
+    NegativeColor = clDefault
+    Alignment = taRightJustify
+    AutoSize = False
+    EditLabel.Height = 17
+    EditLabel.Width = 115
+    EditLabel.Caption = '$ Precio Mayor'
+    EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Color = clBlack
+    EditLabel.Font.Height = -13
+    EditLabel.Font.Name = 'Segoe UI Semibold'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 6
+  end
+  object pme: TJLabeledFloatEdit
+    Left = 325
+    Height = 26
+    Top = 440
+    Width = 115
+    DisplayFormat = '#,0.00'
+    Decimals = 2
+    NegativeColor = clDefault
+    Alignment = taRightJustify
+    AutoSize = False
+    EditLabel.Height = 17
+    EditLabel.Width = 115
+    EditLabel.Caption = '$ Precio Menor'
+    EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Color = clBlack
+    EditLabel.Font.Height = -13
+    EditLabel.Font.Name = 'Segoe UI Semibold'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clTeal
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 7
+  end
+  object ppro: TJLabeledFloatEdit
+    Left = 440
+    Height = 26
+    Top = 440
+    Width = 115
+    DisplayFormat = '#,0.00'
+    Decimals = 2
+    NegativeColor = clDefault
+    Alignment = taRightJustify
+    AutoSize = False
+    EditLabel.Height = 17
+    EditLabel.Width = 115
+    EditLabel.Caption = '$ Promedio'
+    EditLabel.ParentColor = False
+    EditLabel.ParentFont = False
+    EditLabel.Font.CharSet = ANSI_CHARSET
+    EditLabel.Font.Color = clBlack
+    EditLabel.Font.Height = -13
+    EditLabel.Font.Name = 'Segoe UI Semibold'
+    EditLabel.Font.Pitch = fpVariable
+    EditLabel.Font.Quality = fqDraft
+    EditLabel.Font.Style = [fsBold]
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 8
+  end
+  object b_get: TBitBtn
+    Left = 474
+    Height = 30
+    Top = 73
+    Width = 80
+    Caption = 'Buscar'
+    OnClick = b_getClick
+    TabOrder = 3
+  end
+end
